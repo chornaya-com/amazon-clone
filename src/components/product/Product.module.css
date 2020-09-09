@@ -37,3 +37,11 @@
     border-color: #a88734 #9c7e31 #846a29;
     cursor: pointer;
 }
+
+.productRatingStar {
+    margin-right: 2px;
+}
+
+.productRatingStar:last-child {
+    margin-right: 0;
+}
