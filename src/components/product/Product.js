@@ -1,7 +1,22 @@
 import React from "react";
 import * as cn from "./Product.module.css";
+import {useStateValue} from "../StateProvider";
 
-export function Product({title, price, rating, image}) {
+export function Product({id, title, price, rating, image}) {
+    const [{basket}, dispatch] = useStateValue();
+    const addToBasket = () => {
+        dispatch({
+            type: 'ADD_TO_BASKET',
+            item: {
+                id,
+                title,
+                price,
+                rating,
+                image
+            }
+        })
+    };
+
     return (
         <div className={cn.product}>
             <div className={cn.productInfo}>
@@ -12,11 +27,11 @@ export function Product({title, price, rating, image}) {
                 <div className={cn.productRating}>
                     {Array(rating)
                         .fill()
-                        .map((_) => (<p>⭐ </p>))}
+                        .map((_, i) => (<p className={cn.productRatingStar} key={i}>⭐</p>))}
                 </div>
             </div>
             <img src={image} alt=""/>
-            <button>Add to basket</button>
+            <button onClick={addToBasket}>Add to basket</button>
         </div>
     );
 }
