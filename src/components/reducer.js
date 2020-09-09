@@ -1,7 +1,13 @@
+import React from "react";
+
 export const initialState = {
     basket: [],
     user: null
 };
+
+export const getBasketTotal = (basket) => {
+    return basket.reduce((amount, item) => item.price + amount, 0);
+}
 
 export const reducer = (state, action) => {
     switch (action.type) {
