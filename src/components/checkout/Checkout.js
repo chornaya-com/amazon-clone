@@ -9,7 +9,7 @@ export function Checkout() {
 
     return (
         <div className={cn.checkout}>
-            <div className={cn.checkoutLeft}>
+            <div>
                 <img
                     className={cn.checkoutAd}
                     src="https://images-eu.ssl-images-amazon.com/images/G/02/UK-hq/2020/img/Events/XCM_Manual_ORIGIN_1262125_1335636_UK_uk_uk_exclusives_week_sept_2_gb_en_3332080_1500x200_en_GB.jpg"
@@ -37,7 +37,7 @@ export function Checkout() {
                     </div>
                 )}
             </div>
-            {basket.length > 0 && (<div className={cn.checkoutRight}>
+            {basket.length > 0 && (<div>
                 <Subtotal/>
             </div>)}
         </div>

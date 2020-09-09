@@ -13,7 +13,6 @@ export function Subtotal() {
         <div className={cn.subtotal}>
             <CurrencyFormat
                 renderText={(value) => {
-                    console.log('v',value);
                     return (
                         <>
                             <p>
@@ -23,7 +22,8 @@ export function Subtotal() {
                                 <input type="checkbox"/> This order contains a gift.
                             </small>
                         </>
-                    )}
+                    )
+                }
                 }
                 decimalScale={2}
                 value={totalValue}

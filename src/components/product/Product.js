@@ -26,7 +26,7 @@ export function Product({id, title, price, rating, image}) {
                 </p>
                 <div className={cn.productRating}>
                     {Array(rating)
-                        .fill()
+                        .fill('')
                         .map((_, i) => (<p className={cn.productRatingStar} key={i}>⭐</p>))}
                 </div>
             </div>
