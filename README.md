@@ -7,7 +7,8 @@ Implemented with React, state management based on React Context API and Firebase
 ![Preview](https://user-images.githubusercontent.com/61564546/92927813-1bcc3300-f436-11ea-98d8-5c08c0200dba.png)
 
 ## Features
-[x] firebase setup
+
+[X] firebase setup
 [x] sign in functionality
 [x] sign out functionality
 [x] shopping cart functionality
