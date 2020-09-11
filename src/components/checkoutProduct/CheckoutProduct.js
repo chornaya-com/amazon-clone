@@ -3,7 +3,7 @@ import * as cn from "./CheckoutProduct.module.css";
 import {useStateValue} from "../StateProvider";
 
 export function CheckoutProduct({id, title, price, image, rating}) {
-    const [_, dispatch] = useStateValue();
+    const [, dispatch] = useStateValue();
     const removeFromBasket = () => {
         dispatch({
             type: 'REMOVE_FROM_BASKET',
@@ -22,6 +22,7 @@ export function CheckoutProduct({id, title, price, image, rating}) {
                 <div className={cn.checkoutProductRating}>
                     {Array(rating)
                         .fill('')
+                        // eslint-disable-next-line
                         .map((_, i) => (<p className={cn.checkoutProductRatingStar} key={i}>⭐</p>))}
                 </div>
                 <button onClick={removeFromBasket}>Remove from basket</button>

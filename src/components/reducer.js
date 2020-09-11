@@ -1,5 +1,3 @@
-import React from "react";
-
 export const initialState = {
     basket: [],
     user: null
@@ -11,6 +9,11 @@ export const getBasketTotal = (basket) => {
 
 export const reducer = (state, action) => {
     switch (action.type) {
+        case 'SET_USER':
+            return {
+                ...state,
+                user: action.user
+            };
         case 'ADD_TO_BASKET':
             return {
                 ...state,

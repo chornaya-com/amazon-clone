@@ -3,7 +3,7 @@ import * as cn from "./Product.module.css";
 import {useStateValue} from "../StateProvider";
 
 export function Product({id, title, price, rating, image}) {
-    const [_, dispatch] = useStateValue();
+    const [, dispatch] = useStateValue();
     const addToBasket = () => {
         dispatch({
             type: 'ADD_TO_BASKET',
@@ -27,6 +27,7 @@ export function Product({id, title, price, rating, image}) {
                 <div className={cn.productRating}>
                     {Array(rating)
                         .fill('')
+                        // eslint-disable-next-line
                         .map((_, i) => (<p className={cn.productRatingStar} key={i}>⭐</p>))}
                 </div>
             </div>
