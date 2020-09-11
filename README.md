@@ -1,6 +1,4 @@
 # Amazon Clone Project
-
-## Overview
 Clone of Amazon Website (incl. authentication, catalog and shopping cart functionalities).
 Implemented with React, state management based on React Context API and Firebase integration.
 
