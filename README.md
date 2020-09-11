@@ -8,14 +8,14 @@ Implemented with React, state management based on React Context API and Firebase
 
 ## Features
 
-[X] firebase setup
-[x] sign in functionality
-[x] sign out functionality
-[x] shopping cart functionality
-[x] product catalog UI
-[ ] local storage for items added to shopping cart
-[ ] product search functionality
-[ ] payment functionality
+- [x] firebase setup
+- [x] sign in functionality
+- [x] sign out functionality
+- [x] shopping cart functionality
+- [x] product catalog UI
+- [ ] local storage for items added to shopping cart
+- [ ] product search functionality
+- [ ] payment functionality
 
 ## How To
 ### Install Dependencies
