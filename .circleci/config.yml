@@ -11,6 +11,14 @@ jobs:
           root: .
           paths:
             - .
+  test:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn test
   build:
     docker:
       - image: cimg/node:12.16
