@@ -36,8 +36,8 @@ workflows:
     jobs:
       - prepare
       - test
-        requires:
-          - prepare
+          requires:
+            - prepare
       - build:
           requires:
             - prepare
