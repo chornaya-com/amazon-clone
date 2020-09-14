@@ -1,0 +1,62 @@
+version: 2.1
+jobs:
+  prepare:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: yarn install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  test:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn test
+  build:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  deploy:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn deploy --token="$FIREBASE_TOKEN"
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+workflows:
+  app:
+    jobs:
+      - prepare
+      - test:
+          requires:
+            - prepare
+      - build:
+          requires:
+            - prepare
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
