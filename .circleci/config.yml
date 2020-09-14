@@ -20,10 +20,7 @@ jobs:
       - attach_workspace:
           at: .
       - run: yarn build
-      - persist_to_workspace:
-          root: .
-          path:
-            - .
+
 workflows:
   app:
     jobs:
