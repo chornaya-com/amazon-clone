@@ -35,7 +35,7 @@ workflows:
   app:
     jobs:
       - prepare
-      - test
+      - test:
           requires:
             - prepare
       - build:
