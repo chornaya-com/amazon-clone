@@ -1,0 +1,14 @@
+{
+  "title": [
+    {
+      "pattern": "^AC-\\d{1,4}: [A-Z].+",
+      "message": "Title needs to be prefixed with the Jira ticket number. example: 'AC-001: My title...'"
+    }
+  ],
+  "body": [
+    {
+      "pattern": "^(?!Please describe your pull request)",
+      "message": "Please replace the default description."
+    }
+  ]
+}
