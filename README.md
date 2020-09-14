@@ -1,4 +1,8 @@
 # Amazon Clone Project
+[![CircleCI](https://circleci.com/gh/chornaya-com/amazon-clone/tree/master.svg?style=svg&circle-token=63f6f27e841f7eff22bbd348eaee6daf742f2c66)](https://circleci.com/gh/chornaya-com/amazon-clone/tree/master)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#)
+
 Clone of Amazon Website (incl. authentication, catalog and shopping cart functionalities).
 Implemented with React, state management based on React Context API and Firebase integration.
 
