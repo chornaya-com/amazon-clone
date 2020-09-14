@@ -11,6 +11,7 @@ jobs:
           root: .
           path:
             - .
+
   build:
     docker:
       - image: cimg/node:12.16
@@ -23,7 +24,6 @@ jobs:
           root: .
           path:
             - .
-
 workflows:
   app:
     jobs:
