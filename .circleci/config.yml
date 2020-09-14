@@ -9,9 +9,25 @@ jobs:
       - run: yarn install
       - persist_to_workspace:
           root: .
-          path: .
+          path:
+            - .
+  build:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+        at: .
+      - run: yarn build
+      - persist_to_workspace:
+          root: .
+          path:
+            - .
 
 workflows:
   app:
     jobs:
       - prepare
+      - build:
+          requires:
+            - prepare
