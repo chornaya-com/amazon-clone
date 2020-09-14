@@ -1,7 +1,17 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  prepare:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: yarn install
+      - persist_to_workspace:
+          root: .
+          path: .
+
 workflows:
-  node-tests:
+  app:
     jobs:
-      - node/test
+      - prepare
