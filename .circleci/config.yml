@@ -31,6 +31,18 @@ jobs:
           root: .
           paths:
             - .
+  deploy:
+    docker:
+      - image: cimg/node:12.16
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn deploy --token="$FIREBASE_TOKEN"
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
 workflows:
   app:
     jobs:
@@ -41,3 +53,6 @@ workflows:
       - build:
           requires:
             - prepare
+      - deploy:
+          requires:
+            - build
