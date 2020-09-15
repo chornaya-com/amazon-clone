@@ -4,11 +4,18 @@ import {Link} from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import classnames from "classnames";
-import {useStateValue} from "../StateProvider";
+import {StateContext} from "../StateProvider";
 import {auth} from "../firebase";
 
 export function Header() {
-    const [{basket, user}] = useStateValue();
+    const [{basket, user, searchText}, dispatch] = React.useContext(StateContext);
+
+    const updateSearch = (event) => {
+        dispatch({
+            type: 'SEARCH',
+            searchText: event.target.value,
+        });
+    };
 
     const login = async () => {
         if (user) {
@@ -24,7 +31,12 @@ export function Header() {
                     alt=""/>
             </Link>
             <div className={cn.headerSearch}>
-                <input className={cn.headerSearchInput} type="text"/>
+                <input
+                    value={searchText}
+                    className={cn.headerSearchInput}
+                    type="text"
+                    onChange={updateSearch}
+                />
                 <SearchIcon className={cn.headerSearchIcon}/>
             </div>
             <div className={cn.headerNav}>

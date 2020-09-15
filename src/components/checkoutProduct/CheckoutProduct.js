@@ -1,9 +1,9 @@
 import React from "react";
 import * as cn from "./CheckoutProduct.module.css";
-import {useStateValue} from "../StateProvider";
+import {StateContext} from "../StateProvider";
 
 export function CheckoutProduct({id, title, price, image, rating}) {
-    const [, dispatch] = useStateValue();
+    const [, dispatch] = React.useContext(StateContext);
     const removeFromBasket = () => {
         dispatch({
             type: 'REMOVE_FROM_BASKET',

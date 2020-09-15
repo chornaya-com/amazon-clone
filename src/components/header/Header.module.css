@@ -62,3 +62,20 @@
 .basketCount {
     margin: 0 10px;
 }
+
+@media (max-width: 600px) {
+    .headerLogo {
+       width: 50px;
+    }
+    .headerNav, .lineTwo {
+        font-size: 10px;
+    }
+
+    .headerSearchInput {
+        height: 8px;
+    }
+
+    .headerSearchIcon {
+        height: 18px !important;
+    }
+}

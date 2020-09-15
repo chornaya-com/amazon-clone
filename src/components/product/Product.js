@@ -1,9 +1,9 @@
 import React from "react";
 import * as cn from "./Product.module.css";
-import {useStateValue} from "../StateProvider";
+import {StateContext} from "../StateProvider";
 
 export function Product({id, title, price, rating, image}) {
-    const [, dispatch] = useStateValue();
+    const [, dispatch] = React.useContext(StateContext);
     const addToBasket = () => {
         dispatch({
             type: 'ADD_TO_BASKET',

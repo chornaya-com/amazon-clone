@@ -13,4 +13,16 @@
 .homeRow {
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .homeRow {
+        margin-top: -50px;
+    }
+    .homeImage {
+        margin-bottom: 0;
+    }
 }

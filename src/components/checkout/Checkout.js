@@ -1,11 +1,11 @@
 import React from "react";
 import * as cn from "./Checkout.module.css";
-import {useStateValue} from "../StateProvider";
+import {StateContext} from "../StateProvider";
 import {CheckoutProduct} from "../checkoutProduct/CheckoutProduct";
 import {Subtotal} from "../subtotal/Subtotal";
 
 export function Checkout() {
-    const [{basket}] = useStateValue();
+    const [{basket}] = React.useContext(StateContext);
 
     return (
         <div className={cn.checkout}>
