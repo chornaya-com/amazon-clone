@@ -45,6 +45,7 @@ export const getBasketTotal = (basket) => {
     return basket.reduce((amount, item) => item.price + amount, 0);
 }
 
+export const SEARCH_ACTION = 'SEARCH';
 export const reducer = (state, action) => {
     switch (action.type) {
         case 'SET_USER':
@@ -66,7 +67,7 @@ export const reducer = (state, action) => {
                 console.warn(`Can't remove product (id: ${action.id}) as it doesn't exist.`)
             }
             return {...state, basket: newBasket};
-        case 'SEARCH':
+        case SEARCH_ACTION:
             return {
                 ...state,
                 searchText: action.searchText,
