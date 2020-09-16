@@ -18,7 +18,7 @@ Implemented with React, state management based on React Context API and Firebase
 - [x] shopping cart functionality
 - [x] product catalog UI
 - [ ] local storage for items added to shopping cart
-- [ ] product search functionality
+- [x] product search functionality
 - [ ] payment functionality
 
 ## How To
